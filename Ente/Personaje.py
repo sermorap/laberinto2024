@@ -2,7 +2,7 @@ from Ente.Ente import Ente
 from Cuerpo.Cuerpo import Cuerpo
 from Artefactos.BolsilloMagico import BolsilloMagico
 
-class Character(Ente):
+class Personaje(Ente):
     
     def __init__(self):
         super().__init__()

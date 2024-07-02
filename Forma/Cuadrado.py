@@ -1,6 +1,6 @@
 from Forma.Forma import Forma
 
-class Square(Forma):
+class Cuadrado(Forma):
 
     def __init__(self):
         super().__init__()

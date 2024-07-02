@@ -4,7 +4,7 @@ from ElementoMapa.Container.Habitacion import Habitacion
 from Orientaciones import Noroeste, Noreste, Sureste, Suroeste, Sur
 from Command.Abrir import Abrir
 
-class PentagonoBuilder(LaberintoBuilder):
+class LaberintoPentagonoBuilder(LaberintoBuilder):
     
     def fabricarForma(self):
         return Pentagono()

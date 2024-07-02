@@ -1,5 +1,5 @@
 from Etapa.Etapa import Etapa
-from Etapa.Desarrollo import Jugando
+from Etapa.Desarrollo import Desarrollo
 
 class Inicio(Etapa):
     
@@ -8,7 +8,7 @@ class Inicio(Etapa):
 
     def lanzarBichos(self,juego):
         juego.puedeLanzarBichos()
-        juego.fase = Jugando()
+        juego.fase = Desarrollo()
 
     def esInicio(self):
         return True

@@ -1,6 +1,6 @@
 from LaberintoBuilder.LaberintoBuilder import LaberintoBuilder
 from LaberintoBuilder.LaberintoRomboBuilder import LaberintoRomboBuilder
-from LaberintoBuilder.LaberintoRomboBuilder import LaberintoTrianguloBuilder
+from LaberintoBuilder.LaberintoTrianguloBuilder import LaberintoTrianguloBuilder
 from LaberintoBuilder.LaberintoRomboBuilder import LaberintoPentagonoBuilder
 import json
 

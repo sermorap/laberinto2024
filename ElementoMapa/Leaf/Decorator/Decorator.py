@@ -1,6 +1,6 @@
 from ElementoMapa.Leaf.Leaf import Leaf
 
-class Decorador (Leaf):
+class Decorator (Leaf):
 
     def __init__(self):
         super().__init__()

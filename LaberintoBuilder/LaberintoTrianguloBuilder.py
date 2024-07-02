@@ -4,7 +4,7 @@ from ElementoMapa.Container.Habitacion import Habitacion
 from Orientaciones import Norte, Este, Suroeste
 from Command.Abrir import Abrir
 
-class TrianguloBuilder(LaberintoBuilder):
+class LaberintoTrianguloBuilder(LaberintoBuilder):
     
     def fabricarForma(self):
         return Triangulo()

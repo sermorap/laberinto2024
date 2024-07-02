@@ -1,6 +1,6 @@
 from Forma.Forma import Forma
 
-class Diamond(Forma):
+class Rombo(Forma):
 
     def __init__(self):
         super().__init__()
