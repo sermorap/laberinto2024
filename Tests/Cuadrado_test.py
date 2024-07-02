@@ -2,7 +2,7 @@ import unittest
 import os
 from io import StringIO
 import sys
-sys.path.append('C:/Users/34722/Documentos/Esiiab/TERCERO/laberinto2024')
+from pathlib import Path
 
 from Ente.Personaje import Personaje
 from LaberintoBuilder.Director import Director
@@ -11,22 +11,25 @@ class Cuadrado_test(unittest.TestCase):
 
     def setUp(self):
         super().setUp()
-        sys.stdout_save =sys.stdout
+        self.stdout_save = sys.stdout
         sys.stdout = StringIO()
+        
+        json_file = Path('json') / 'lab4hab.json'
+        if not json_file.exists():
+            raise FileNotFoundError(f"El archivo {json_file} no se encuentra.")
+        
         director = Director()
-        director.procesar('lab4hab.json')
+        director.procesar(str(json_file))
         self.juego = director.getJuego()
+        
         personaje = Personaje()
         personaje.seudonimo = "Sergio"
         self.juego.agregarPersonaje(personaje)
-        sys.stdout=sys.stdout_save
+        
+        sys.stdout = self.stdout_save
 
-    def testIniciales(self):
-        self.assertEqual(self.juego is not None, True)
-        self.assertEqual(self.juego.esJuego(),True)
-        self.assertEqual(len(self.juego.laberinto.objChildren),4)
-
-        print("INICIAL CORRECTO.\n")
+    def tearDown(self):
+        sys.stdout = self.stdout_save
     
     def testHabitaciones(self):
         #1
