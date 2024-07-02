@@ -11,6 +11,8 @@ class Bicho(Ente):
         super().__init__()
         self.modo = None
         self.numero_identificador = None
+        self.chetado = False
+
     def set_posicion(self, pos):
         self.posicion = pos
         for observador in self.obsPosition:
@@ -63,7 +65,13 @@ class Bicho(Ente):
         return True
     
     def __str__(self):
-        return "Bicho " + str(self.modo) + "con " + str(self.numero_identificador)
+        return "Bicho " + str(self.modo) + " con " + str(self.numero_identificador)
     
     def __repr__(self):
-        return "Bicho " + str(self.modo) + "con " + str(self.numero_identificador)
+        return "Bicho " + str(self.modo) + " con " + str(self.numero_identificador)
+
+    def esAtacadoPor(self, unEnte):
+        self.estado.enteEsAtacadoPor(self, unEnte)
+        if self.modo.esSupersaiyan() and not self.chetado:
+            self.modo.chetarse(self)
+            self.chetado = True

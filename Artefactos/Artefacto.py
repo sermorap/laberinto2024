@@ -13,7 +13,11 @@ class Artefacto(ElementoMapa, ABC):
         self.obsPos = []
         
     def entrar(self, obj):
-        self.padre.objChildren.remove(self)
+        
+        if self in self.padre.objChildren:
+            self.padre.objChildren.remove(self)
+        else:
+            print(f"Error: {self} no está en la lista objChildren de {self.padre}")
         obj.bolsillomagico.addArtefacto(self)
 
         for com in self.commands:
@@ -25,11 +29,11 @@ class Artefacto(ElementoMapa, ABC):
         for obs in self.obsPos:
             obs.visualObjeto(self)
 
-    def soltar(self,ente):
+    def dejar(self,ente):
         ente.posicion.addChild(self)
         ente.bolsillomagico.soltarArtefacto(self)
         for com in self.commands:
-            if com.esSoltar():
+            if com.esDejar():
                 self.deleteCommand(com)
         for com in self.commands:
             if com.esUsar():

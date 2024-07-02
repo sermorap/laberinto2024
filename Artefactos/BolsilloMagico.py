@@ -60,7 +60,7 @@ class BolsilloMagico(Artefacto):
     def soltarArtefacto(self, art):
         self.children.remove(art)
 
-        for obs in self.obsMochila:
+        for obs in self.obsBolsillo:
             obs.visualmochila(self)
 
     def recorrer(self, sbj):

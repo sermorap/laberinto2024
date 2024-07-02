@@ -30,3 +30,6 @@ class Modo():
     
     def esPerezoso(self):
         return False
+    
+    def esSupersaiyan(self):
+        return False

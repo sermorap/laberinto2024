@@ -3,7 +3,7 @@ from Command.Command import Command
 class Cerrar(Command):
     
     def ejecutar(self, obj):
-        self.receiver.close(obj)
+        self.receiver.cerrar()
     
     def esCerrar(self): 
         return True
