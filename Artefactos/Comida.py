@@ -1,7 +1,7 @@
 from Artefactos.Artefacto import Artefacto
 
 class Comida(Artefacto):
-#
+
     def __init__(self):
         super().__init__()
         self.vida = 10

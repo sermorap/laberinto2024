@@ -1,7 +1,6 @@
 from LaberintoBuilder.LaberintoBuilder import LaberintoBuilder
 from LaberintoBuilder.LaberintoRomboBuilder import LaberintoRomboBuilder
 from LaberintoBuilder.LaberintoTrianguloBuilder import LaberintoTrianguloBuilder
-from LaberintoBuilder.LaberintoRomboBuilder import LaberintoPentagonoBuilder
 import json
 
 class Director():
@@ -38,9 +37,6 @@ class Director():
         if self.diccionario['forma'] == "triangulo":
             self.form = "Triangulo"
             self.builder = LaberintoTrianguloBuilder()
-        if self.diccionario['forma'] == "pentagono":
-            self.form = "Pentagono"
-            self.builder = LaberintoPentagonoBuilder()
 
     def makeMaze(self):
         self.builder.fabricarLaberinto()

@@ -39,7 +39,7 @@ class Juego():
         return self.prota.posicion.getChildren()
     
     def agregarPersonaje(self, ch):
-        self.fase.addCharacter(ch, self)
+        self.etapa.addCharacter(ch, self)
 
     def puedeAgregarPersonaje(self, ch):
         ch.juego = self
@@ -77,7 +77,7 @@ class Juego():
     def muereBicho(self):
         if self.verificarBichos() and self.hasGanado:
             print(str(self.prota),"HAS GANADO!")
-            self.fase = Final()
+            self.etapa = Final()
 
     def verificarBichos(self):
         for ant in self.bichos:
@@ -116,7 +116,7 @@ class Juego():
 
     def lanzarBichos(self):
         juego = self
-        self.fase.lanzarBichos(juego)
+        self.etapa.lanzarBichos(juego)
 
     def puedeLanzarBichos(self):
         for bicho in self.bichos:

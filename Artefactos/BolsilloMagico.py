@@ -32,7 +32,7 @@ class BolsilloMagico(Artefacto):
 
             self.children.append(art)
 
-            for observador in self.obsMochila:
+            for observador in self.obsBolsillo:
                 observador.visualmochila(self)
         else:
             print("*[¡!] Capacidad insuficiente en el bolsillo mágico de doraemon...*")

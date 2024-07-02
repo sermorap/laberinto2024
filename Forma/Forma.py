@@ -41,3 +41,6 @@ class Forma():
     
     def esRombo(self):
         return False
+    
+    def esTriangulo(self):
+        return True

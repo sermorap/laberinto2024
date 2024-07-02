@@ -7,7 +7,7 @@ class Personaje(Ente):
     def __init__(self):
         super().__init__()
         self.apodo=None
-        self.bolsillomagico=None
+        self.bolsillomagico=BolsilloMagico()
         self.cuerpo=Cuerpo()
 
     def obtenerComandosCuerpo(self):

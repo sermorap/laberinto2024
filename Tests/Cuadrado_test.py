@@ -23,7 +23,7 @@ class Cuadrado_test(unittest.TestCase):
         self.juego = director.getJuego()
         
         personaje = Personaje()
-        personaje.seudonimo = "Sergio"
+        personaje.apodo = "Sergio"
         self.juego.agregarPersonaje(personaje)
         
         sys.stdout = self.stdout_save
@@ -88,14 +88,14 @@ class Cuadrado_test(unittest.TestCase):
         #Bicho 2
         b2 = bichos[1]
         self.assertEqual(b2.numero_identificador,2)
-        self.assertEqual(b2.modo.esAgresivo(),True)
+        self.assertEqual(b2.modo.esPerezoso(),True)
         self.assertEqual(b2.posicion,self.juego.laberinto.objChildren[1])
         self.assertEqual(b2.juego,self.juego)
         self.assertEqual(b2.estado.estaVivo(),True)
         #Bicho 3
         b3 = bichos[2]
         self.assertEqual(b3.numero_identificador,3)
-        self.assertEqual(b3.modo.esPerezoso(),True)
+        self.assertEqual(b3.modo.esAgresivo(),True)
         self.assertEqual(b3.posicion,self.juego.laberinto.objChildren[2])
         self.assertEqual(b3.juego,self.juego)
         self.assertEqual(b3.estado.estaVivo(),True)
@@ -115,7 +115,7 @@ class Cuadrado_test(unittest.TestCase):
         self.assertEqual(personaje.posicion,self.juego.getHab(1))
         self.assertEqual(personaje.estado.estaVivo(),True)
         self.assertEqual(personaje.juego, self.juego)
-        self.assertEqual(personaje.bolsillomagico.esBolsilloMagico(),True)
+        self.assertEqual(personaje.bolsillomagico.esBolsillo(),True)
         self.assertEqual(personaje.cuerpo.esCuerpo(),True)
         self.assertEqual(personaje.cuerpo.brazoAtaque is None, True)
 
@@ -343,7 +343,7 @@ class Cuadrado_test(unittest.TestCase):
         self.assertEqual(len(bolsillomagico := personaje.bolsillomagico.children), 1)
         self.assertEqual((Comida := bolsillomagico[0]).esComida(), True)
         self.assertEqual(len((coms := Comida.obtenerComandos(personaje))), 2)
-        coms[0].ejecutar(personaje)  # Dejar Pan
+        coms[0].ejecutar(personaje)  # Dejar Comida
         self.assertEqual(Comida.padre, personaje.posicion)
         coms = personaje.obtenerComandos(personaje)
         coms[0].ejecutar(personaje)  # Volver a equipar Comida
@@ -437,7 +437,7 @@ class Cuadrado_test(unittest.TestCase):
         self.assertEqual((Pocima:=bolsillomagico[0]).esPocima(),True)
         self.assertEqual(len((coms:=bolsillomagico.obtenerComandos(personaje))),2)
         print(coms[0])
-        coms[0].ejecutar(personaje)#Soltar Pocima
+        coms[0].ejecutar(personaje)#Dejar Pocima
         self.assertEqual(Pocima.padre,personaje.posicion)
         coms= personaje.obtenerComandos(personaje)
         print(coms[0])

@@ -63,7 +63,7 @@ class LaberintoBuilder():
         comida = Comida()
         comida.ref = num
 
-        cmd = self.fabricarCoger()
+        cmd = self.fabricarEquipar()
         cmd.receiver= comida
 
         comida.addCommand(cmd)
@@ -73,7 +73,7 @@ class LaberintoBuilder():
         pocima = Pocima()
         pocima.ref = num
 
-        cmd = self.fabricarCoger()
+        cmd = self.fabricarEquipar()
         cmd.receiver= pocima
 
         pocima.addCommand(cmd)

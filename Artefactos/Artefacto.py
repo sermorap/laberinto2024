@@ -17,7 +17,7 @@ class Artefacto(ElementoMapa, ABC):
         obj.bolsillomagico.addArtefacto(self)
 
         for com in self.commands:
-            if com.esCoger:
+            if com.esEquipar():
                 self.deleteCommand(com)
 
         self.addCommand(Dejar())
