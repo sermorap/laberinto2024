@@ -14,6 +14,7 @@ class Ente(ABC):
 
     def __init__(self):
         self.corazones = 100
+        self.escudo = 20
         self.poder = 10
         self.estado = Vivo()
         self.posicion= None
@@ -51,9 +52,19 @@ class Ente(ABC):
     def recalcularVidas(self, ente):
         if ente.esPersonaje():
             arma = ente.obtenerArco()
-        calc = (self.corazones) - (ente.poder + arma.poder)
+        else:
+            arma = None
+
+        if self.esPersonaje() and self.escudo > 0:
+            escudoOk = min(self.escudo, ente.poder)
+            dano_recibido = ente.poder + (arma.poder if arma else 0) - escudoOk
+            self.escudo -= escudoOk
+        else:
+            dano_recibido = ente.poder + (arma.poder if arma else 0)
+
+        calc = self.corazones - dano_recibido
         if calc > self.corazones:
-            self.setCorazones(self.vidas)
+            self.setCorazones(self.corazones)
         else:
             self.setCorazones(calc)
         if self.corazones < 0:
