@@ -15,11 +15,11 @@ Mientas que el comando USAR, que sirve para usar estos objetos.
 
 RERITRARVENENO, sirve para que el personaje pueda retirar el veneno de una pared para no recibir daño del mismo.
 
-Decorador: Veneno
+Decorador: 
+    Veneno
 
 Forma: 
     Triangulo
-    Pentagono
 
 Modo: 
     Supersaiyan
@@ -33,9 +33,20 @@ Artefactos:
     Pocion
 
 (Pocion o comida, ambos sirven apara curar al personaje, la primera 50 de vida y la segunda).
-```
 
+**Ajustes**
+
+Debido a que tuve problemas con los import, tuve que poner en el archivo config 'settings.json' la ruta de mi directorio local donde se alojaba el proyecto.
+```ruby
+{
+    "python.envFile": "${workspaceFolder}/.env",
+    "terminal.integrated.env.windows": {
+      "PYTHONPATH": "C:/Users/34722/Documentos/Esiiab/TERCERO/laberinto2024"
+    }
+  }
+```
+````
 Me he apoyado para la realización del proyecto en IAs como ChatGPT, Gemini y Cody
 =======
 Diseño Software 23/24
-
+````
